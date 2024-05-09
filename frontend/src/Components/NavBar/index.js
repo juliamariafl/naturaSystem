@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import Natura from '../img/Natura.png';
+import Natura from '../../img/Natura.png';
 import { CiSearch } from "react-icons/ci";
 import { Container, Row, Col } from "react-bootstrap";
+import '../NavBar/Navbar.css'
 
 const Navbar = () => {
     return (
