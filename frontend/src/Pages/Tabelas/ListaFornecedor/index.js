@@ -1,6 +1,6 @@
 //Lista de Fornecedor
 import React from "react";
-import TabelaCadastroFornecedor from "../Components/TabelaCadastroFornecedor";
+import TabelaCadastroFornecedor from "../../../Components/TabelaCadastroFornecedor";
 
 const ListaFornecedor = () => {
   return (

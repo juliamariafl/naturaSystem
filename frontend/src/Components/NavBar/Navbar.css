@@ -1,0 +1,12 @@
+.navbar2 {
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 45px;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.pai{
+    display: flex;
+}
