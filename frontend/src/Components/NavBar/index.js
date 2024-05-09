@@ -16,10 +16,9 @@ const Navbar = () => {
                             <button class="button" type="submit">
                             <CiSearch />
                             </button>
-                            <input class="input" name="q" placeholder="O que está buscando?" required="" />
+                            <input id='barraPesquisa' class="input" name="q" placeholder="O que está buscando?" required="" />
                         </form>
                     </div>
-                    <div><h2>ocontas</h2></div>
                 </div>
             </Container>
         </>

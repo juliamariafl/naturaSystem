@@ -16,7 +16,15 @@ const Header = () => {
             <Link to="/cadastro">Cadastro</Link>
           </li>
           <li className='links'>
-            <Link to="/produtos">Produtos</Link>
+          <Dropdown className='listas'>
+              <Dropdown.Toggle variant="success" id="dropdown-basics">
+                <Link>Produtos</Link>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1"><Link className='listas' to="/cadastroProduto">Cadastro de produtos</Link></Dropdown.Item>
+                <Dropdown.Item href="#/action-1"><Link className='listas' to="/registroProduto">Registro de produtos</Link></Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </li>
           <li className='links'>
             <Dropdown className='listas'>

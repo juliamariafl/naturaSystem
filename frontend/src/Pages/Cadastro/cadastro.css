@@ -261,15 +261,14 @@ button.button {
     border: transparent;
 }
 
-.BoxCadastro {
-    border: 1px solid black;
-    border-radius: 10px;
-    display: inline-block;
-    width: 100vh;
-    height: 50vh;
-    margin-left: 30%;
+.css-46bh2p-MuiCardContent-root {
+    padding: 95px !important;
 }
 
-.paiii{
-    margin: 10px 0px 13px 0px;
+.cardCadastro{
+    max-width: 110vh;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.cardCadastro.css-bhp9pd-MuiPaper-root-MuiCard-root {
+    margin: 65px 100px 0px 53vh;
 }
