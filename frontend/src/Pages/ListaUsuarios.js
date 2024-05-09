@@ -1,13 +1,12 @@
 //Lista de Usuarios
 import React from "react";
-import TabelaCadastro from "../Components/TabelaCadastro";
+import TabelaCadastroUsuario from "../Components/TabelaCadastroUsuario";
 
 const ListaUsuarios = () => {
   return (
     <>
       <div>
-        <h2>Lista de Usuários</h2>
-        <TabelaCadastro />
+        <TabelaCadastroUsuario />
       </div>
     </>
   );

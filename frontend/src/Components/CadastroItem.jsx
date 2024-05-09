@@ -1,16 +1,16 @@
 import React from 'react';
 
-const CadastroItem = ({ cadastro, onDelete }) => {
+const CadastroItem = ({ Cadastro, onDelete }) => {
   return (
     <tr>
-      <td>{cadastro.id}</td>
-      <td>{cadastro.nome}</td>
-      <td>{cadastro.email}</td>
-      <td>{cadastro.cpf}</td>
-      <td>{cadastro.endereco}</td>
-      <td>{cadastro.telefone}</td>
+      <td>{Cadastro.id}</td>
+      <td>{Cadastro.nome}</td>
+      <td>{Cadastro.email}</td>
+      <td>{Cadastro.cpf}</td>
+      <td>{Cadastro.endereco}</td>
+      <td>{Cadastro.telefone}</td>
       <td>
-        <button onClick={() => onDelete(cadastro.id)}>Excluir</button>
+        <button onClick={() => onDelete(Cadastro.id)}>Excluir</button>
       </td>
     </tr>
   );

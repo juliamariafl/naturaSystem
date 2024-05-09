@@ -4,7 +4,7 @@ const cors = require('cors');
 const routes = require('./routes'); // Importa as rotas do backend
 
 const app = express();
-const port = 3001; // Defina a porta que deseja utilizar
+const port = 8080; // Defina a porta que deseja utilizar
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
