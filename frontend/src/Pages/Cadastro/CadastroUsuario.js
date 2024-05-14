@@ -4,8 +4,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CadastroFormUsuario from "../../Components/CadastroFormUsuario";
-import CadastroFormFornecedor from "../../Components/CadastroformFornecedor";
-import CadastroFormFuncionario from "../../Components/CadastroFormFuncionario";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -62,7 +60,7 @@ const Cadastro = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>Cadastro de Funcionário</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body><CadastroFormFuncionario /></Modal.Body>
+                      <Modal.Body><CadastroFormUsuario /></Modal.Body>
                     </Modal>
                   </div>
                   {/* cadastro Fonecedor */}
@@ -72,7 +70,7 @@ const Cadastro = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>Cadastro de Fornecedor</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body><CadastroFormFornecedor /></Modal.Body>
+                      <Modal.Body><CadastroFormUsuario /></Modal.Body>
                     </Modal>
                   </div>
                 </Dropdown.Menu>

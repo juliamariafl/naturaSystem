@@ -1,11 +1,11 @@
 //Produtos
 import React from "react";
-import CadastroFormProduto from '../../../Components/CadastroFormProduto';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import './produtos.css'
+import CadastroFormUsuario from "../../../Components/CadastroFormUsuario";
+import '../CadastroProdutos/produtos.css';
 
 const CadastroProdutos = () => {
   return (
@@ -17,7 +17,7 @@ const CadastroProdutos = () => {
               Novo Produto
             </Typography>
             <div className="InputProduto">
-              <CadastroFormProduto />
+              <CadastroFormUsuario />
             </div>
           </CardContent>
         </CardActionArea>

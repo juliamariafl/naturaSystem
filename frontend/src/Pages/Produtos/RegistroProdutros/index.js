@@ -64,6 +64,7 @@ const RegistroProduto = () => {
                 </Row>
             </Container>
             <div>
+                <h3 className="registroProduto">Registro de Produto</h3>
                 <TabelaCadastroProduto />
             </div>
         </>

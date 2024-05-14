@@ -6,3 +6,9 @@ svg {
 .cardEspecial{
   margin-top: 80px;
 }
+
+.registroProduto{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}

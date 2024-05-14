@@ -1,30 +1,22 @@
 //Produtos
 import React from "react";
-import CadastroFormProduto from '../../../Components/CadastroFormProduto';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import './produtos.css'
+import TabelaCadastroProduto from "../../Components/TabelaCadastroProduto";
+import './Estoque.css'
 
-const CadastroProdutos = () => {
+const Estoque = () => {
   return (
     <>
-      <Card className="card" sx={{ maxWidth: 345 }}>
-        <CardActionArea className="CardActionArea">
-          <CardContent className="CardContent">
-            <Typography gutterBottom variant="h4" component="div">
-              Estoque
-            </Typography>
-            <div className="InputProduto">
-              <CadastroFormProduto />
-            </div>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+      <div>
+        <h3 className="estoqueProduto">Estoque</h3>
+        <TabelaCadastroProduto />
+      </div>
 
     </>
   );
 };
 
-export default CadastroProdutos;
+export default Estoque;
