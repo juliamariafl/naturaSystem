@@ -31,28 +31,20 @@ const TabelaCadastro = () => {
 
   return (
     <>
+
       <div>
-<<<<<<< HEAD
-      <h3 className="tabela">Registro de Produtos</h3>
-=======
-        <h3 className="tabela">Registro de Produtos</h3>
->>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
+        <h3 className="tabela">Tabela de Funcionários</h3>
         <table border={2} cellPadding={5} cellSpacing={5}>
           <thead>
             <tr>
               <th>ID</th>
               <th>Nome</th>
-<<<<<<< HEAD
               <th>Email</th>
               <th>CPF</th>
               <th>Telefone</th>
               <th>Senha</th>
               <th>Salário</th>
               <th>Excluir</th>
-=======
-              <th>Estoque</th>
-              <th>Preço</th>
->>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
               {/* Adicione mais colunas, se necessário */}
             </tr>
           </thead>
@@ -61,17 +53,12 @@ const TabelaCadastro = () => {
               <tr key={cadastro.idCadastro}>
                 <td>{cadastro.idCadastro}</td>
                 <td>{cadastro.nome}</td>
-<<<<<<< HEAD
                 <td>{cadastro.email}</td>
                 <td>{cadastro.cpf}</td>
                 <td>{cadastro.telefone}</td>
                 <td>{cadastro.senha}</td>
                 <td>{cadastro.salario}</td>
                 <td>{cadastro.excluir}</td>
-=======
-                <td>{cadastro.estoque}</td>
-                <td>{cadastro.preco}</td>
->>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
                 <td>
                   <button
                     variant="danger"

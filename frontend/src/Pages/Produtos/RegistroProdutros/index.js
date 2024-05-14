@@ -1,6 +1,7 @@
 //Lista de Usuarios
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,6 +9,8 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./RegistroProdutos.css";
 =======
+=======
+>>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
 import TabelaCadastroProduto from '../../../Components/TabelaCadastroProduto';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -20,6 +23,7 @@ import { MdOutlineInventory } from "react-icons/md";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './RegistroProdutos.css';
+<<<<<<< HEAD
 >>>>>>> bd1e2ff1d6c5766fee922308e1f3f414482d8f7f
 
 
@@ -52,6 +56,11 @@ const RegistroProduto = () => {
     </>
   );
 =======
+=======
+
+
+const RegistroProduto = () => {
+>>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
     return (
         <>
             <Container>
@@ -105,7 +114,10 @@ const RegistroProduto = () => {
             </div>
         </>
     );
+<<<<<<< HEAD
 >>>>>>> bd1e2ff1d6c5766fee922308e1f3f414482d8f7f
+=======
+>>>>>>> ce00ef35239bbd4f4109c01cef58b8c0a7951a5a
 };
 
 export default RegistroProduto;
