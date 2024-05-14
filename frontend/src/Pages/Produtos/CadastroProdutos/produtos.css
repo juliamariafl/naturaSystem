@@ -2,3 +2,31 @@
     display: flex;
     justify-content: center;
 }
+
+.InputProduto {
+    display: table-caption;
+}
+
+.FormInputs input {
+    border-radius: 25px;
+    width: 75vh;
+    border: 1px solid;
+}
+
+.MuiCardContent-root.CardContent.css-46bh2p-MuiCardContent-root {
+    max-width: 141vh;
+    align-items: center;
+    display: grid;
+    text-align: -webkit-center;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.card.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+    margin-left: 38vh;
+    border-radius: 20px;
+    max-width: 140vh;
+    margin-top: 35px;
+}
+
+button.MuiButtonBase-root.MuiCardActionArea-root.CardActionArea.css-1oitmrd-MuiButtonBase-root-MuiCardActionArea-root {
+    height: 70vh;
+}

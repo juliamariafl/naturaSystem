@@ -10,18 +10,18 @@ const Header = () => {
       <nav>
         <ul className='navbar2'>
           <li className='links'>
-            <Link to="/login">Login</Link>
+            <Link className='linkNav' to="/login">Login</Link>
           </li>
           <li className='links'>
-            <Link to="/cadastro">Cadastro</Link>
+            <Link className='linkNav' to="/cadastro">Cadastro</Link>
           </li>
           <li className='links'>
           <Dropdown className='listas'>
               <Dropdown.Toggle variant="success" id="dropdown-basics">
-                <Link>Produtos</Link>
+                <Link className='linkNav'>Produtos</Link>
               </Dropdown.Toggle>
               <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1"><Link className='listas' to="/cadastroProduto">Cadastro de produtos</Link></Dropdown.Item>
+              <Dropdown.Item href="#/action-1"><Link className='listas' to="/cadastroProdutos">Cadastro de produtos</Link></Dropdown.Item>
                 <Dropdown.Item href="#/action-1"><Link className='listas' to="/registroProduto">Registro de produtos</Link></Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -29,7 +29,7 @@ const Header = () => {
           <li className='links'>
             <Dropdown className='listas'>
               <Dropdown.Toggle variant="success" id="dropdown-basics">
-                <Link>Cadastro de Usuários</Link>
+                <Link className='linkNav'>Cadastro de Usuários</Link>
               </Dropdown.Toggle>
               <Dropdown.Menu>
               <Dropdown.Item href="#/action-1"><Link className='listas' to="/listaUsuarios">Lista de Usuário</Link></Dropdown.Item>
@@ -39,13 +39,13 @@ const Header = () => {
             </Dropdown>
           </li>
           <li className='links'>
-            <Link to="/financeiro">Financeiro</Link>
+            <Link className='linkNav' to="/financeiro">Financeiro</Link>
           </li>
           <li className='links'>
-            <Link to="/estoque">Estoque</Link>
+            <Link className='linkNav' to="/estoque">Estoque</Link>
           </li>
           <li className='links'>
-            <Link to="/vendas">Vendas</Link>
+            <Link className='linkNav' to="/vendas">Vendas</Link>
           </li>
         </ul>
       </nav>

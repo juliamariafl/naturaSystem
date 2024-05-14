@@ -28,10 +28,6 @@ a {
     color: black;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 .card {
     background: var(--surface-card);
     border-radius: 10px;
@@ -188,9 +184,7 @@ button#dropdown-basic {
 
 table {
     margin: 15px;
-    /* width: 60%; */
     justify-content: flex-start;
-    display: flex;
     margin-top: 25px;
 }
 
@@ -223,11 +217,11 @@ header {
 }
 
 
-.links a{
+.links a {
     color: white;
 }
 
-a.listas{
+a.listas {
     font-size: 15px;
     color: black;
     background: transparent !important;
@@ -235,23 +229,24 @@ a.listas{
 
 button#dropdown-basics {
     background-color: transparent;
-    border-color:transparent;
+    border-color: transparent;
     padding: 0;
     border: 0;
 }
 
-::after{
+::after {
     background-color: black;
 }
 
-.links{
+.links {
     margin: 10px 15px 0px 15px;
 }
+
 a.dropdown-item {
     color: black;
 }
 
-.imagem{
+.imagem {
     width: 130px;
     height: 85px;
 }
@@ -261,11 +256,11 @@ button.button {
     border: transparent;
 }
 
-.css-46bh2p-MuiCardContent-root {
+.CardComTudo {
     padding: 95px !important;
 }
 
-.cardCadastro{
+.cardCadastro {
     max-width: 110vh;
 }
 

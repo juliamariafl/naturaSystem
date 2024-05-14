@@ -32,7 +32,7 @@ const Cadastro = () => {
     <>
       <Card className="cardCadastro">
         <CardActionArea>
-          <CardContent>
+          <CardContent className="CardComTudo">
             <div className="BoxCadastro">
               <div>
                 <h2 className="cadastro">Cadastro</h2>
@@ -78,7 +78,6 @@ const Cadastro = () => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-
           </CardContent>
         </CardActionArea>
       </Card>

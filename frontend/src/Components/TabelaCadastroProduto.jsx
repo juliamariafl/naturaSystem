@@ -31,9 +31,8 @@ const TabelaCadastro = () => {
 
   return (
     <>
-
       <div>
-        <h3 className="tabela">Registro de Produtos</h3>
+      <h3 className="tabela">Registro de Produtos</h3>
         <table border={2} cellPadding={5} cellSpacing={5}>
           <thead>
             <tr>

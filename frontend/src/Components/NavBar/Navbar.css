@@ -1,3 +1,6 @@
+/* body{
+    overflow:inherit;
+} */
 .navbar2 {
     display: flex;
     background-color: black;
@@ -40,4 +43,8 @@ svg#search {
     border: none;
     height: 32px;
     width: 260px;
+}
+
+.linkNav:hover {
+    text-decoration: underline;
 }
