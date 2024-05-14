@@ -39,7 +39,7 @@ router.get("/cadastros/:id", (req, res) => {
 router.post("/cadastros", (req, res) => {
   const { nome, email, cpf, telefone, senha } = req.body;
   connection.query(
-    "INSERT INTO clientes (nome, email, cpf, telefone, senha) VALUES (?, ?, ?, ?, ?, ?)",
+    "INSERT INTO clientes (nome, email, cpf, telefone, senha) VALUES (?, ?, ?, ?, ?)",
     [nome, email, cpf, telefone, senha],
     (err, result) => {
       if (err) {
