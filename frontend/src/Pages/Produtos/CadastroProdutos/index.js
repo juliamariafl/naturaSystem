@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import CadastroFormUsuario from "../../../Components/CadastroFormUsuario";
+import CadastroFormCliente from "../../../Components/CadastroFormCliente";
 import '../CadastroProdutos/produtos.css';
 
 const CadastroProdutos = () => {
@@ -17,7 +17,7 @@ const CadastroProdutos = () => {
               Novo Produto
             </Typography>
             <div className="InputProduto">
-              <CadastroFormUsuario />
+              <CadastroFormCliente />
             </div>
           </CardContent>
         </CardActionArea>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const TabelaCadastro = () => {
+const TabelaCadastroCliente = () => {
   const [cadastros, setCadastros] = useState([]);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const TabelaCadastro = () => {
   return (
     <>
       <div>
-        <h3 className="tabela">Tabela de Usuário</h3>
+        <h3 className="tabela">Tabela de Cliente</h3>
         <table border={2} cellPadding={5} cellSpacing={5}>
           <thead>
             <tr>
@@ -76,4 +76,4 @@ const TabelaCadastro = () => {
   );
 };
 
-export default TabelaCadastro;
+export default TabelaCadastroCliente;

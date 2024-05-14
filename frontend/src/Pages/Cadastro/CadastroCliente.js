@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import CadastroFormUsuario from "../../Components/CadastroFormUsuario";
+import CadastroFormCliente from "../../Components/CadastroFormCliente";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -50,7 +50,7 @@ const Cadastro = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>Cadastro de Usuário</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body><CadastroFormUsuario /></Modal.Body>
+                      <Modal.Body><CadastroFormCliente /></Modal.Body>
                     </Modal>
                   </div>
                   {/* cadastro Funcionario */}
@@ -60,7 +60,7 @@ const Cadastro = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>Cadastro de Funcionário</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body><CadastroFormUsuario /></Modal.Body>
+                      <Modal.Body><CadastroFormCliente /></Modal.Body>
                     </Modal>
                   </div>
                   {/* cadastro Fonecedor */}
@@ -70,7 +70,7 @@ const Cadastro = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>Cadastro de Fornecedor</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body><CadastroFormUsuario /></Modal.Body>
+                      <Modal.Body><CadastroFormCliente /></Modal.Body>
                     </Modal>
                   </div>
                 </Dropdown.Menu>

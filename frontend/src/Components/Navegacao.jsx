@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container, Row, Col } from "react-bootstrap";
-import '../Pages/Cadastro/CadastroUsuario';
+
 
 const Header = () => {
   return (
@@ -32,7 +32,7 @@ const Header = () => {
                 <Link className='linkNav'>Cadastro de Usuários</Link>
               </Dropdown.Toggle>
               <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1"><Link className='listas' to="/listaUsuarios">Lista de Usuário</Link></Dropdown.Item>
+              <Dropdown.Item href="#/action-1"><Link className='listas' to="/listaClientes">Lista de Usuário</Link></Dropdown.Item>
                 <Dropdown.Item href="#/action-1"><Link className='listas' to="/listaFuncionario">Lista de Funcionário</Link></Dropdown.Item>
                 <Dropdown.Item href="#/action-2"><Link className='listas' to="/listaFornecedor">Lista de Fornecedor</Link></Dropdown.Item>
               </Dropdown.Menu>
