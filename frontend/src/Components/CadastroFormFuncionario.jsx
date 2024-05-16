@@ -2,13 +2,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CadastroFormCliente = () => {
+const CadastroFormFuncionario = () => {
   const [formData, setFormData] = useState({
     id: "",
     nome: "",
     email: "",
     cpf: "",
     telefone: "",
+    salario: "",
+    cargo: "",
     senha: "",
   });
 
@@ -23,7 +25,7 @@ const CadastroFormCliente = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/cadastrosCliente", formData);
+      await axios.post("http://localhost:8080/cadastrosFuncionario", formData);
       alert("Cadastro criado com sucesso!");
       // Limpar o formulário após o envio bem-sucedido
       setFormData({
@@ -32,6 +34,8 @@ const CadastroFormCliente = () => {
         email: "",
         cpf: "",
         telefone: "",
+        salario: "",
+        cargo: "",
         senha: "",
       });
     } catch (error) {
@@ -78,6 +82,20 @@ const CadastroFormCliente = () => {
         onChange={handleChange}
       />
       <input
+        type="number"
+        name="salario"
+        placeholder="Salário"
+        value={formData.salario}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="cargo"
+        placeholder="Cargo"
+        value={formData.cargo}
+        onChange={handleChange}
+      />
+      <input
         type="password"
         name="senha"
         placeholder="Crie uma senha"
@@ -89,4 +107,4 @@ const CadastroFormCliente = () => {
   );
 };
 
-export default CadastroFormCliente;
+export default CadastroFormFuncionario;

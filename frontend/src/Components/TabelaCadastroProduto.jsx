@@ -37,8 +37,12 @@ const TabelaCadastro = () => {
             <tr>
               <th>ID</th>
               <th>Nome</th>
-              <th>Estoque</th>
-              <th>Preço</th>
+              <th>Email</th>
+              <th>CPF</th>
+              <th>Telefone</th>
+              <th>Senha</th>
+              <th>Salário</th>
+              <th>Excluir</th>
               {/* Adicione mais colunas, se necessário */}
             </tr>
           </thead>
@@ -47,8 +51,12 @@ const TabelaCadastro = () => {
               <tr key={cadastro.idCadastro}>
                 <td>{cadastro.idCadastro}</td>
                 <td>{cadastro.nome}</td>
-                <td>{cadastro.estoque}</td>
-                <td>{cadastro.preco}</td>
+                <td>{cadastro.email}</td>
+                <td>{cadastro.cpf}</td>
+                <td>{cadastro.telefone}</td>
+                <td>{cadastro.senha}</td>
+                <td>{cadastro.salario}</td>
+                <td>{cadastro.excluir}</td>
                 <td>
                   <button
                     variant="danger"
@@ -63,7 +71,6 @@ const TabelaCadastro = () => {
           </tbody>
         </table>
       </div>
-
     </>
   );
 };
