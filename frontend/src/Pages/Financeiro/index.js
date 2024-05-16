@@ -5,6 +5,7 @@ import { MdOutlineAttachMoney } from "react-icons/md";
 import { TbPigMoney } from "react-icons/tb";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import CadastroFormFinanceiro from "../../Components/CadastroFormFinanceiro";
+import TabelaCadastroFinanceiro from '../../Components/TabelaCadastroFinanceiro';
 import { FaHome } from "react-icons/fa";
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
@@ -27,9 +28,6 @@ const Financeiro = () => {
                         <Nav variant="pills" className="flex-column">
                             <div className="menuTodo"><FaHome className="iconHome" /><h5 className="menuP">Menu</h5></div>
                             <Nav.Item>
-                                <Nav.Link eventKey="first"><MdOutlineAttachMoney className="linkMoney" />Finanças:</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
                                 <Nav.Link eventKey="second"><FaPlus className="linkPlus" />Adicionar novo gasto</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
@@ -42,7 +40,6 @@ const Financeiro = () => {
                     </Col>
                     <Col sm={8}>
                         <Tab.Content>
-                            <Tab.Pane eventKey="first">Finanças:</Tab.Pane>
                             <Tab.Pane eventKey="second"><CadastroFormFinanceiro /></Tab.Pane>
                             <Tab.Pane eventKey="third">Controle do mês:</Tab.Pane>
                             <Tab.Pane eventKey="quarter">Metas Financeiras:</Tab.Pane>
@@ -55,9 +52,11 @@ const Financeiro = () => {
                 <Col md={7}>
                     <div className="novoGasto">
                         <FaPlus className="iconPlus" />
-                        <h6 className="tituloGasto">Adicionar novo gasto</h6>
+                        <h6 className="tituloGasto">Finanças</h6>
                     </div>
+
                 </Col>
+
                 <Col md={5}>
                     <div className="novoGasto">
                         <FaPlus className="iconPlus" />
@@ -65,7 +64,12 @@ const Financeiro = () => {
                     </div>
                 </Col>
             </Row>
-            <h3 className="financeiro">Registro de Produto</h3>
+            <Row className="adicionaisEmpresa">
+                <Col md={7}>
+                    <div> <TabelaCadastroFinanceiro /></div>
+                </Col>
+                <Col md={5} className="ControleMes"><h3>Controle do mês</h3></Col>
+            </Row>
         </>
     );
 };

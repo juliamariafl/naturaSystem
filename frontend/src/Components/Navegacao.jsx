@@ -51,12 +51,12 @@ const Header = () => {
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-1">
                   <Link className="listas" to="/listaFuncionario">
-                    Lista de Funcionários
+                    Lista de Funcionário
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">
                   <Link className="listas" to="/listaFornecedor">
-                    Lista de Fornecedores
+                    Lista de Fornecedor
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const TabelaCadastro = () => {
+const TabelaCadastroFornecedor = () => {
   const [cadastros, setCadastros] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/cadastros");
+        const { data } = await axios.get(
+          "http://localhost:8080/cadastrosFornecedor"
+        );
         setCadastros(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
@@ -17,11 +19,13 @@ const TabelaCadastro = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (idCadastro) => {
+  const handleExcluirUsuario = async (idFornecedor) => {
     try {
-      await axios.delete(`http://localhost:8080/cadastros/${idCadastro}`);
+      await axios.delete(`http://localhost:8080/cadastros/${idFornecedor}`);
       // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:8080/cadastros");
+      const { data } = await axios.get(
+        "http://localhost:8080/cadastrosFornecedor"
+      );
       setCadastros(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
@@ -39,9 +43,9 @@ const TabelaCadastro = () => {
               <th>ID</th>
               <th>Nome</th>
               <th>Email</th>
-              <th>CPF</th>
               <th>Telefone</th>
-              <th>Senha</th>              
+              <th>Mercadoria</th>
+              <th>Senha</th>
               <th>Excluir</th>
 
               {/* Adicione mais colunas, se necessário */}
@@ -49,18 +53,18 @@ const TabelaCadastro = () => {
           </thead>
           <tbody>
             {cadastros.map((cadastro) => (
-              <tr key={cadastro.idCadastro}>
-                <td>{cadastro.idCadastro}</td>
+              <tr key={cadastro.idFornecedor}>
+                <td>{cadastro.idFornecedor}</td>
                 <td>{cadastro.nome}</td>
                 <td>{cadastro.email}</td>
-                <td>{cadastro.cpf}</td>
                 <td>{cadastro.telefone}</td>
+                <td>{cadastro.mercadoria}</td>
                 <td>{cadastro.senha}</td>
                 <td>{cadastro.excluir}</td>
                 <td>
                   <button
                     variant="danger"
-                    onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
+                    onClick={() => handleExcluirUsuario(cadastro.idFornecedor)}
                   >
                     Excluir
                   </button>
@@ -71,9 +75,8 @@ const TabelaCadastro = () => {
           </tbody>
         </table>
       </div>
-
     </>
   );
 };
 
-export default TabelaCadastro;
+export default TabelaCadastroFornecedor;

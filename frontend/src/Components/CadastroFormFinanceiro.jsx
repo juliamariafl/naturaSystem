@@ -1,5 +1,9 @@
 // CadastroForm.jsx
 import React, { useState } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 
 const CadastroFormUsuario = () => {
@@ -41,6 +45,12 @@ const CadastroFormUsuario = () => {
       alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
     }
   };
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
 
   return (
     <form className='financeiroForm' onSubmit={handleSubmit}>
