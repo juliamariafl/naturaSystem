@@ -1,11 +1,11 @@
 //Produtos
 import React from "react";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
-import CadastroFormCliente from "../../../Components/CadastroFormCliente";
-import '../CadastroProdutos/produtos.css';
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+import "../CadastroProdutos/produtos.css";
+import CadastroFormProduto from "../../../Components/CadastroFormProduto";
 
 const CadastroProdutos = () => {
   return (
@@ -17,12 +17,11 @@ const CadastroProdutos = () => {
               Novo Produto
             </Typography>
             <div className="InputProduto">
-              <CadastroFormCliente />
+              <CadastroFormProduto />
             </div>
           </CardContent>
         </CardActionArea>
       </Card>
-
     </>
   );
 };
