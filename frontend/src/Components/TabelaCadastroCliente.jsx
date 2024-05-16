@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Container, Row, Col } from 'react-bootstrap';
 import axios from "axios";
 
 const TabelaCadastroCliente = () => {
@@ -31,7 +32,7 @@ const TabelaCadastroCliente = () => {
 
   return (
     <>
-      <div>
+      <Container >
         <h3 className="tabela">Tabela de Cliente</h3>
         <table border={2} cellPadding={5} cellSpacing={5}>
           <thead>
@@ -71,7 +72,7 @@ const TabelaCadastroCliente = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </Container>
     </>
   );
 };

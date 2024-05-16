@@ -8,6 +8,7 @@ import CadastroProdutos from "./Pages/Produtos/CadastroProdutos/index";
 import RegistroProduto from './Pages/Produtos/RegistroProdutros/index';
 import Estoque from './Pages/Estoque/index';
 import Financeiro from "./Pages/Financeiro";
+import Vendas from "./Pages/Vendas/index"
 
 const Rotas = () => {
   return (
@@ -21,6 +22,7 @@ const Rotas = () => {
         <Route path="/estoque" element={<Estoque />} />
         <Route path="/financeiro" element={<Financeiro />} />
         <Route path="/listaFornecedor" element={<ListaFornecedor />} />
+        <Route path="/Vendas" element={<Vendas/>} />
       </Routes>
     </>
   );
