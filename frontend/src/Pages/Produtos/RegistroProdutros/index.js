@@ -24,7 +24,7 @@ const RegistroProduto = () => {
                             <Card sx={{ maxWidth: 345 }}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <TfiMoney />
+                                        <TfiMoney className="icone" />
                                         <Typography gutterBottom variant="h5" component="div">
                                             Financeiro
                                         </Typography>
@@ -38,7 +38,7 @@ const RegistroProduto = () => {
                             <Card sx={{ maxWidth: 345 }}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <MdOutlineInventory />
+                                        <MdOutlineInventory className="icone" />
                                         <Typography gutterBottom variant="h5" component="div">
                                             Estoque
                                         </Typography>
@@ -52,7 +52,7 @@ const RegistroProduto = () => {
                             <Card sx={{ maxWidth: 345 }}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <MdOutlineSell />
+                                        <MdOutlineSell className="icone" />
                                         <Typography gutterBottom variant="h5" component="div">
                                             Vendas
                                         </Typography>

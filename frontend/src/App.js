@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import Rodape from "./Components/Rodape";
 import Navbar from "./Components/NavBar/index";
 //Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,6 +21,7 @@ const App = () => {
         <Navegacao />
         <Rotas />
       </Router>
+      <Rodape />
     </>
   );
 };
