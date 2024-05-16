@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Row, Col } from "react-bootstrap";
-import "../Pages/Cadastro/CadastroUsuario";
+import "../Pages/Cadastro/index";
 
 const Header = () => {
   return (
@@ -41,22 +41,22 @@ const Header = () => {
           <li className="links">
             <Dropdown className="listas">
               <Dropdown.Toggle variant="success" id="dropdown-basics">
-                <Link className="linkNav">Cadastro de Usuários</Link>
+                <Link className="linkNav">Geren. de Usuários</Link>
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1">
-                  <Link className="listas" to="/listaUsuarios">
-                    Lista de Usuário
+                  <Link className="listas" to="/listaClientes">
+                    Lista de Clientes
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-1">
                   <Link className="listas" to="/listaFuncionario">
-                    Lista de Funcionário
+                    Lista de Funcionários
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">
                   <Link className="listas" to="/listaFornecedor">
-                    Lista de Fornecedor
+                    Lista de Fornecedores
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>

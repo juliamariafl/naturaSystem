@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CadastroFormUsuario = () => {
+const CadastroFormCliente = () => {
   const [formData, setFormData] = useState({
     id: "",
     nome: "",
@@ -89,4 +89,4 @@ const CadastroFormUsuario = () => {
   );
 };
 
-export default CadastroFormUsuario;
+export default CadastroFormCliente;
