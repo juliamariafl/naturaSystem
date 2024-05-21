@@ -46,6 +46,7 @@ const TabelaCadastroCliente = () => {
               <th>CPF</th>
               <th>Telefone</th>
               <th>Senha</th>
+              <th>Excluir</th>
               {/* Adicione mais colunas, se necessário */}
             </tr>
           </thead>
@@ -59,6 +60,7 @@ const TabelaCadastroCliente = () => {
                 <td>{cadastro.telefone}</td>
                 <td>{cadastro.senha}</td>
                 <td>
+                  {cadastro.excluir}
                   <button
                     variant="danger"
                     onClick={() => handleExcluirUsuario(cadastro.idCliente)}

@@ -32,7 +32,12 @@ const TabelaCadastroFinanceiro = () => {
   return (
     <>
       <div>
-        <table className="tabelaFinanceiro" border={2} cellPadding={5} cellSpacing={5}>
+        <table
+          className="tabelaFinanceiro"
+          border={2}
+          cellPadding={5}
+          cellSpacing={5}
+        >
           <thead>
             <tr>
               <th>Nome</th>
@@ -56,11 +61,12 @@ const TabelaCadastroFinanceiro = () => {
                 <td>{cadastro.categoria}</td>
                 <td>{cadastro.vencimento}</td>
                 <td>{cadastro.formaDePagamento}</td>
-                <td>{cadastro.excluir}</td>
+
                 <td>
+                  {cadastro.excluir}
                   <button
                     variant="danger"
-                    onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
+                    onClick={() => handleExcluirUsuario(cadastro.idFinanceiro)}
                   >
                     Excluir
                   </button>

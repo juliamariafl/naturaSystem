@@ -1,7 +1,6 @@
 // CadastroForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
-import "../../src/Pages/Produtos/CadastroProdutos/produtos.css";
 
 const CadastroFormProduto = () => {
   const [formData, setFormData] = useState({
@@ -77,9 +76,6 @@ const CadastroFormProduto = () => {
         onChange={handleChange}
       />
       <button type="submit">Salvar</button>
-      <button className="botaoProduto" type="submit">
-        Salvar
-      </button>
     </form>
   );
 };

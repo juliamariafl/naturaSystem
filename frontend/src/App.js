@@ -18,6 +18,7 @@ const App = () => {
       <Navbar />
       <Router>
         <Navegacao />
+
         <Rotas />
       </Router>
       <Rodape />

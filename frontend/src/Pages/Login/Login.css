@@ -1,195 +1,143 @@
 .divider:after,
 .divider:before {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #000000;
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #000000;
 }
 
 .btn-primary {
-    background-color: rgb(13, 13, 13) !important;
-    color: rgb(255, 255, 255) !important;
-    /* position: fixed !important; */
-    animation: none !important;
-    max-width: none !important;
-    border: none !important;
-
-
+  background-color: rgb(13, 13, 13) !important;
+  color: rgb(255, 255, 255) !important;
+  /* position: fixed !important; */
+  animation: none !important;
+  max-width: none !important;
+  border: none !important;
 }
 
-input {
-    margin-top: 15px;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid;
-    margin-top: 20px;
-    display: flex !important;
-    padding-left: 50px;
+.inputLogin {
+  margin-top: 15px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: 20px;
+  display: flex !important;
+  padding-left: 50px;
 }
 
-input:focus {
-    border-radius: 15px;
-    margin: 5px;
-    padding: 10px;
-    margin-top: 15px;
-    outline: none !important;
-    box-shadow: 0 0 0 0 !important;
-    color: #000000 !important;
+.inputLogin:focus {
+  border-radius: 15px;
+  margin: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  outline: none !important;
+  box-shadow: 0 0 0 0 !important;
+  color: #000000 !important;
 }
 
-Container {
-    /* border: solid 1px !important; */
-    border-radius: 10px;
-    width: 960px !important;
-    box-shadow: 0px 0px 0px 0.3px black !important;
-}
-
-h3 {
-    max-width: 850px !important;
-    margin: 0 auto;
-    align-items: end;
-    /* padding-left: 340px; */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-    font-size: 40px;
-    margin-top: 15px;
-    margin-top: 20px;
-    justify-content: center;
-    text-align: center;
-
+.containerLogin {
+  /* border: solid 1px !important; */
+  border-radius: 10px;
+  width: 960px !important;
+  box-shadow: 0px 0px 0px 0.3px black !important;
 }
 
 .Natura {
-    margin-top: 120px !important;
-    height: 300px !important;
-    max-width: 450 !important;
-    margin: 0 auto;
-    align-items: center;
-    padding-left: 40px !important;
-    margin-top: 160px !important;
+  margin-top: 100px !important;
+  height: 300px !important;
+  max-width: 450 !important;
+  /* margin: 0 auto; */
+  align-items: center;
+  padding-left: 40px !important;
+  /* margin-top: 160px !important; */
+}
 
-
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 .form-select {
-    height: 50px;
-    width: 220px;
-    margin-top: -58px;
-    outline: none !important;
-    box-shadow: 0 0 0 0 !important;
-    border: solid 1px !important;
-    margin-left: 67vh !important;
-    padding-left: 15px;
-    position: relative;
-
+  height: 50px;
+  width: 220px;
+  margin-top: -58px;
+  outline: none !important;
+  box-shadow: 0 0 0 0 !important;
+  border: solid 1px !important;
+  margin-left: 55vh !important;
+  padding-left: 15px;
+  position: relative;
 }
 
 .flexCheck {
-    padding-right: 20px;
-}
-
-.row {
-    width: 100%;
+  padding-right: 20px;
 }
 
 .Logar {
-    color: white !important;
-    background-color: #000000 !important;
-    height: 50px !important;
-    border-radius: 10px;
-    /* border: none; */
-    /* width: 19px !important; */
+  color: white !important;
+  background-color: #000000 !important;
+  height: 50px !important;
+  border-radius: 10px;
+  /* border: none; */
+  /* width: 19px !important; */
 }
 
 .Lembrar {
-    height: 50px !important;
-    width: 20px !important;
-    padding-left: 140px !important;
-    margin-top: -10px;
+  height: 50px !important;
+  width: 20px !important;
+  padding-left: 140px !important;
+  margin-top: -10px;
 }
 
-h4 {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-right: 180px !important;
-}
-
-/* Estilos padrão */
-body {
-    font-size: 16px;
-}
-
-Container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    border: solid 1px !important;
-    box-shadow: 10px 10px 10px 5px black !important;
-}
-
-/* Estilos para telas menores que 768px */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 0 10px;
-    }
-}
-
-/* Estilos para telas menores que 576px */
-@media screen and (max-width: 576px) {
-    body {
-        font-size: 12px;
-    }
+.h4Login {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-right: 180px !important;
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* Espaço entre os botões */
-}
-
-@media (min-width: 1080px) {
-    .button-container {
-        flex-direction: row;
-    }
-
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Espaço entre os botões */
 }
 
 @media screen and (max-width: 1080px) {
-    .btn-primary {
-        display: flex !important;
-        flex-direction: column !important;
-    }
+  .btn-primary {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
-    .form-select {
-        margin-left: 170px !important;
-    }
+  .borda {
+    margin-left: 10px !important;
+    max-width: 100%;
+  }
+
+  .form-select {
+    margin-left: 170px !important;
+  }
 }
 
 .Logar {
-    width: 160px !important;
+  width: 160px !important;
 }
 
 .Logar:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .borda {
-    width: auto !important;
-    height: auto !important;
-    border: solid 1px !important;
-    border-radius: 0px 20px 0px 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+  margin-left: 100px;
+  width: 185vh;
+  height: 100vh;
+  border: solid 1px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
