@@ -50,6 +50,45 @@ router.get("/cadastrosProduto", (req, res) => {
   });
 });
 
+//tabelagestaofinanceiro
+router.get("/cadastrosFinanceiro", (req, res) => {
+  connection.query("SELECT * FROM gestaofinanceiro", (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar os registros:", err);
+      res.status(500).json({ error: "Erro ao buscar os registros" });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+//tabelaestoque
+router.get("/cadastrosEstoque", (req, res) => {
+  connection.query("SELECT * FROM estoque", (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar os registros:", err);
+      res.status(500).json({ error: "Erro ao buscar os registros" });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+//tabelaVendas
+router.get("/cadastrosVendas", (req, res) => {
+  connection.query(
+    "SELECT pedidos.id,pedidos.idCliente, clientes.nome, pedidos.idProduto, produtocadastro.nomeProduto FROM pedidos INNER JOIN clientes ON pedidos.idCliente = clientes.idCliente INNER join produtocadastro on produtocadastro.idProduto = pedidos.idProduto;",
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar os registros:", err);
+        res.status(500).json({ error: "Erro ao buscar os registros" });
+        return;
+      }
+      res.json(results);
+    }
+  );
+});
+
 // Rota para buscar um registro específico pelo ID
 //tabelaclientes
 router.get("/cadastrosCliente/:id", (req, res) => {
@@ -135,6 +174,48 @@ router.get("/cadastrosProduto/:id", (req, res) => {
   );
 });
 
+//tabelagestaofinanceiro
+router.get("/cadastrosFinanceiro/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "SELECT * FROM gestaofinanceiro WHERE id = ?",
+    [id],
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar o registro:", err);
+        res.status(500).json({ error: "Erro ao buscar o registro" });
+        return;
+      }
+      if (results.length === 0) {
+        res.status(404).json({ error: "Registro não encontrado" });
+        return;
+      }
+      res.json(results[0]);
+    }
+  );
+});
+
+//tabelaestoque
+router.get("/cadastrosEstoque/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "SELECT * FROM estoque WHERE id = ?",
+    [id],
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar o registro:", err);
+        res.status(500).json({ error: "Erro ao buscar o registro" });
+        return;
+      }
+      if (results.length === 0) {
+        res.status(404).json({ error: "Registro não encontrado" });
+        return;
+      }
+      res.json(results[0]);
+    }
+  );
+});
+
 // Rota para criar um novo registro
 //tabelaclientes
 router.post("/cadastrosCliente", (req, res) => {
@@ -195,10 +276,49 @@ router.post("/cadastrosFornecedor", (req, res) => {
 
 //tabelaprodutos
 router.post("/cadastrosProduto", (req, res) => {
-  const { nomeProduto, linha, preco, descricaProduto } = req.body;
+  const { nomeProduto, linha, preco, descricaoProduto } = req.body;
   connection.query(
-    "INSERT INTO produtocadastro (nomeProduto, linha, preco, descricaProduto) VALUES (?, ?, ?, ?)",
-    [nomeProduto, linha, preco, descricaProduto],
+    "INSERT INTO produtocadastro (nomeProduto, linha, preco, descricaoProduto) VALUES (?, ?, ?, ?)",
+    [nomeProduto, linha, preco, descricaoProduto],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao criar o registro:", err);
+        res.status(500).json({ error: "Erro ao criar o registro" });
+        return;
+      }
+      res
+        .status(201)
+        .json({ message: "Registro criado com sucesso", id: result.insertId });
+    }
+  );
+});
+
+//tabelagestaofinanceiro
+router.post("/cadastrosFinanceiro", (req, res) => {
+  const { dataTransacao, descricaoTransacao, montante, tipoTransacao } =
+    req.body;
+  connection.query(
+    "INSERT INTO gestaofinanceiro (dataTransacao, descricaoTransacao, montante, tipoTransacao) VALUES (?, ?, ?, ?)",
+    [dataTransacao, descricaoTransacao, montante, tipoTransacao],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao criar o registro:", err);
+        res.status(500).json({ error: "Erro ao criar o registro" });
+        return;
+      }
+      res
+        .status(201)
+        .json({ message: "Registro criado com sucesso", id: result.insertId });
+    }
+  );
+});
+
+//tabelaestoque
+router.post("/cadastrosEstoque", (req, res) => {
+  const { quantidade } = req.body;
+  connection.query(
+    "INSERT INTO estoque (quantidade) VALUES (?)",
+    [quantidade],
     (err, result) => {
       if (err) {
         console.error("Erro ao criar o registro:", err);
@@ -271,10 +391,47 @@ router.put("/cadastrosFornecedor/:id", (req, res) => {
 //tabelaprodutos
 router.put("/cadastrosProduto/:id", (req, res) => {
   const { id } = req.params;
-  const { nomeProduto, linha, preco, descricaProduto } = req.body;
+  const { nomeProduto, linha, preco, descricaoProduto } = req.body;
   connection.query(
     "UPDATE produtocadastro SET nomeProduto = ?, linha = ?, preco = ?, descricaoproduto = ?, WHERE id = ?",
-    [nomeProduto, linha, preco, descricaProduto, id],
+    [nomeProduto, linha, preco, descricaoProduto, id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao atualizar o registro:", err);
+        res.status(500).json({ error: "Erro ao atualizar o registro" });
+        return;
+      }
+      res.json({ message: "Registro atualizado com sucesso" });
+    }
+  );
+});
+
+//tabelagestaofinanceiro
+router.put("/cadastrosFinanceiro/:id", (req, res) => {
+  const { id } = req.params;
+  const { dataTransacao, descricaoTransacao, montante, tipoTransacao } =
+    req.body;
+  connection.query(
+    "UPDATE gestaofinanceiro SET dataTransacao = ?, descricaoTransacao = ?, montante = ?, tipoTransacao = ?, WHERE id = ?",
+    [dataTransacao, descricaoTransacao, montante, tipoTransacao, id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao atualizar o registro:", err);
+        res.status(500).json({ error: "Erro ao atualizar o registro" });
+        return;
+      }
+      res.json({ message: "Registro atualizado com sucesso" });
+    }
+  );
+});
+
+//tabelaestoque
+router.put("/cadastrosEstoque/:id", (req, res) => {
+  const { id } = req.params;
+  const { quantidade } = req.body;
+  connection.query(
+    "UPDATE estoque SET quantidade = ?, WHERE id = ?",
+    [quantidade, id],
     (err, result) => {
       if (err) {
         console.error("Erro ao atualizar o registro:", err);
@@ -338,11 +495,45 @@ router.delete("/cadastrosFornecedor/:id", (req, res) => {
   );
 });
 
-//tabelafornecedores
+//tabelaprodutos
 router.delete("/cadastrosProduto/:id", (req, res) => {
   const { id } = req.params;
   connection.query(
     "DELETE FROM produtocadastro WHERE idProduto = ?",
+    [id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao excluir o registro:", err);
+        res.status(500).json({ error: "Erro ao excluir o registro" });
+        return;
+      }
+      res.json({ message: "Registro excluído com sucesso" });
+    }
+  );
+});
+
+//tabelafinanceiro
+router.delete("/cadastrosFinanceiro/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "DELETE FROM gestaofinanceiro WHERE idTransacao = ?",
+    [id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao excluir o registro:", err);
+        res.status(500).json({ error: "Erro ao excluir o registro" });
+        return;
+      }
+      res.json({ message: "Registro excluído com sucesso" });
+    }
+  );
+});
+
+//tabelaestoque
+router.delete("/cadastrosEstoque/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "DELETE FROM estoque WHERE idEstoque = ?",
     [id],
     (err, result) => {
       if (err) {
