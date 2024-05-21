@@ -22,7 +22,6 @@ const Rotas = () => {
         <Route path="/financeiro" element={<Financeiro />} />
         <Route path="/listaFornecedor" element={<ListaFornecedor />} />
         <Route path="/login" element={<Login />} />
-
       </Routes>
     </>
   );
