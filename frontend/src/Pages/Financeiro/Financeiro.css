@@ -117,3 +117,21 @@ a#left-tabs-example-tab-quarter {
     border: 1px solid;
     padding: 30px;
 }
+
+.dropDownFinancas{
+    display: contents;
+}
+
+.tabelaFinanceiro{
+
+    margin-left: 0;
+    padding: 0;
+}
+
+.col-md-4.ControleMes {
+    padding: 0;
+}
+
+.adicionaisEmpresa{
+    width: 100%;
+}

@@ -42,9 +42,9 @@ const TabelaVendas = () => {
                 <Row className="VendasButton">
                     <h2 className="tituloVenda">Tabela de Gestão de Vendas</h2>
                     <Stack direction="horizontal" gap={3} id="buttonsVendas">
-                        <Button className="p-2 ms-auto" variant="success" id="dropdown-basic"><GiArchiveRegister className="icon" />Cadastrar</Button>
-                        <Button className="p-2" variant="success" id="dropdown-basic"><FiEdit className="icon" />Editar</Button>
-                        <Button className="p-2" variant="success" id="dropdown-basic"><FaFilter className="icon" />Filtrar</Button>
+                        <Button className="p-2 ms-auto" variant="success" id="dropdown-basic"><GiArchiveRegister className="iconeButtonVendas" />Cadastrar</Button>
+                        <Button className="p-2" variant="success" id="dropdown-basic"><FiEdit className="iconeButtonVendas" />Editar</Button>
+                        <Button className="p-2" variant="success" id="dropdown-basic"><FaFilter className="iconeButtonVendas" />Filtrar</Button>
                     </Stack>
                     <Col>
 

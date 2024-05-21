@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
 import axios from "axios";
 
-const TabelaCadastro = () => {
+const TabelaCadastroFinanceiro = () => {
   const [cadastros, setCadastros] = useState([]);
 
   useEffect(() => {
@@ -32,16 +31,17 @@ const TabelaCadastro = () => {
 
   return (
     <>
-        <table border={2} cellPadding={5} cellSpacing={5}>
+      <div>
+        <table className="tabelaFinanceiro" border={2} cellPadding={5} cellSpacing={5}>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Nome</th>
-              <th>Email</th>
-              <th>CPF</th>
-              <th>Telefone</th>
-              <th>Senha</th>
-              <th>Salário</th>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Conta</th>
+              <th>Categoria</th>
+              <th>Vencimento</th>
+              <th>Forma de pagamento</th>
               <th>Excluir</th>
               {/* Adicione mais colunas, se necessário */}
             </tr>
@@ -49,13 +49,13 @@ const TabelaCadastro = () => {
           <tbody>
             {cadastros.map((cadastro) => (
               <tr key={cadastro.idCadastro}>
-                <td>{cadastro.idCadastro}</td>
                 <td>{cadastro.nome}</td>
-                <td>{cadastro.email}</td>
-                <td>{cadastro.cpf}</td>
-                <td>{cadastro.telefone}</td>
-                <td>{cadastro.senha}</td>
-                <td>{cadastro.salario}</td>
+                <td>{cadastro.descricao}</td>
+                <td>{cadastro.valor}</td>
+                <td>{cadastro.conta}</td>
+                <td>{cadastro.categoria}</td>
+                <td>{cadastro.vencimento}</td>
+                <td>{cadastro.formaDePagamento}</td>
                 <td>{cadastro.excluir}</td>
                 <td>
                   <button
@@ -70,8 +70,9 @@ const TabelaCadastro = () => {
             ))}
           </tbody>
         </table>
+      </div>
     </>
   );
 };
 
-export default TabelaCadastro;
+export default TabelaCadastroFinanceiro;

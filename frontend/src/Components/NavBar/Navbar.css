@@ -48,3 +48,10 @@ svg#search {
 .linkNav:hover {
     text-decoration: underline;
 }
+
+@media screen and (max-width: 10px) {
+    .wrapper-search{
+        margin-left: 0;
+    }
+    
+}
