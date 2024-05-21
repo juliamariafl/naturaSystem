@@ -273,7 +273,7 @@ router.put("/cadastrosProduto/:id", (req, res) => {
   const { id } = req.params;
   const { nomeProduto, linha, preco, descricaProduto } = req.body;
   connection.query(
-    "UPDATE produtocadastro SET nomeProduto = ?, linha = ?, preco = ?, descricaoproduto = ?,WHERE id = ?",
+    "UPDATE produtocadastro SET nomeProduto = ?, linha = ?, preco = ?, descricaoproduto = ?, WHERE id = ?",
     [nomeProduto, linha, preco, descricaProduto, id],
     (err, result) => {
       if (err) {
