@@ -42,13 +42,6 @@ const CadastroFormProduto = () => {
     <form className="FormInputs" onSubmit={handleSubmit}>
       <input
         type="text"
-        name="idProduto"
-        placeholder="ID"
-        value={formData.idProduto}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
         name="nomeProduto"
         placeholder="Nome do Produto"
         value={formData.nomeProduto}

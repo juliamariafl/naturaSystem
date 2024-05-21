@@ -19,7 +19,7 @@ const RegistroProduto = () => {
       <Container>
         <Row className="cardEspecial">
           <Col md={4}>
-            <Link className="listas" to="/listaUsuarios">
+            <Link className="listas" to="/financeiro">
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardContent>
@@ -33,7 +33,7 @@ const RegistroProduto = () => {
             </Link>
           </Col>
           <Col md={4}>
-            <Link className="listas" to="/listaUsuarios">
+            <Link className="listas" to="/estoque">
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardContent>
@@ -47,7 +47,7 @@ const RegistroProduto = () => {
             </Link>
           </Col>
           <Col md={4}>
-            <Link className="listas" to="/listaUsuarios">
+            <Link className="listas" to="/vendas">
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                   <CardContent>

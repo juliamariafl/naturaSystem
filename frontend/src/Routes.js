@@ -9,7 +9,7 @@ import RegistroProduto from "./Pages/Produtos/RegistroProdutros/index";
 import Estoque from "./Pages/Estoque/index";
 import Financeiro from "./Pages/Financeiro";
 import Login from "./Pages/Login";
-import Vendas from "./Pages/Vendas";
+import Vendas from "./Pages/Vendas/index";
 const Rotas = () => {
   return (
     <>

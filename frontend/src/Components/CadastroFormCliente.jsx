@@ -44,13 +44,6 @@ const CadastroFormCliente = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="id"
-        placeholder="ID"
-        value={formData.id}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
         name="nome"
         placeholder="Nome"
         value={formData.nome}

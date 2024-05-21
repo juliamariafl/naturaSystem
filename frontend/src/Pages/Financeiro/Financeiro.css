@@ -1,137 +1,135 @@
-
-
 .novoGasto {
-    display: flex;
-    width: 100%;
-    height: 35px;
-    background-color: rgb(167, 166, 166);
+  display: flex;
+  width: 100%;
+  height: 35px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .iconPlus {
-    margin-top: 10px;
-    height: 15px;
-    margin-left: 10px;
-    width: 40px;
+  margin-top: 10px;
+  height: 15px;
+  margin-left: 10px;
+  width: 40px;
 }
 
 .tituloGasto {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 .financeiro {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .flex-column {
-    margin-left: 30px;
-    margin-top: 30px;
-    border-radius: 15px;
-    border: 1px solid;
-    width: 50vh;
-    height: auto;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 15px;
+  border: 1px solid;
+  width: 50vh;
+  height: auto;
 }
 
 .linkPlus {
-    height: 15px;
-    width: 35px;
+  height: 15px;
+  width: 35px;
 }
 
 a#left-tabs-example-tab-first {
-    color: black;
-    padding-left: 23px;
-    border-radius: 0;
+  color: rgb(255, 255, 255);
+  padding-left: 23px;
+  border-radius: 0;
 }
 
 a#left-tabs-example-tab-second {
-    color: black;
-    padding-left: 23px;
-    border-radius: 0;
+  color: black;
+  padding-left: 23px;
+  border-radius: 0;
 }
 
 a#left-tabs-example-tab-third {
-    color: black;
-    padding-left: 23px;
-    border-radius: 0;
+  color: black;
+  padding-left: 23px;
+  border-radius: 0;
 }
 
 a#left-tabs-example-tab-quarter {
-    color: black;
-    padding-left: 23px;
-    border-radius: 0px 0px 15px 15px;
+  color: black;
+  padding-left: 23px;
+  border-radius: 0px 0px 15px 15px;
 }
 
 .linkMoney {
-    height: 15px;
-    width: 35px;
+  height: 15px;
+  width: 35px;
 }
 
 .linkDollar {
-    height: 15px;
-    width: 35px;
+  height: 15px;
+  width: 35px;
 }
 
 .linkPig {
-    height: 15px;
-    width: 35px;
+  height: 15px;
+  width: 35px;
 }
 
 .menuTodo {
-    margin: 8px 0px;
-    display: flex;
+  margin: 8px 0px;
+  display: flex;
 }
 
 .iconHome {
-    height: 12px;
-    width: 35px;
-    margin-left: 7px;
-    margin-top: 9px;
+  height: 12px;
+  width: 35px;
+  margin-left: 7px;
+  margin-top: 9px;
 }
 
 .menuP {
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: var(--bs-nav-pills-link-active-color) !important;
-    background-color: #000000;
+.nav-pills .show > .nav-link {
+  color: var(--bs-nav-pills-link-active-color) !important;
+  background-color: #000000;
 }
 
 .linhaEspaco {
-    margin-top: 50px;
-    height: 10px;
-    border: 0;
-    border-top: 10px solid;
+  margin-top: 50px;
+  height: 10px;
+  border: 0;
+  border-top: 10px solid;
 }
 
-.rowPullis{
-    width: 100%;
+.rowPullis {
+  width: 100%;
 }
 
 .tab-content {
-    border-radius: 15px;
-    margin-left: 20px;
-    margin-top: 30px;
-    border: 1px solid;
-    padding: 30px;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-top: 30px;
+  border: 1px solid;
+  padding: 30px;
 }
 
-.dropDownFinancas{
-    display: contents;
+.dropDownFinancas {
+  display: contents;
 }
 
-.tabelaFinanceiro{
-
-    margin-left: 0;
-    padding: 0;
+.tabelaFinanceiro {
+  margin-left: 0;
+  padding: 0;
 }
 
 .col-md-4.ControleMes {
-    padding: 0;
+  padding: 0;
 }
 
-.adicionaisEmpresa{
-    width: 100%;
+.adicionaisEmpresa {
+  width: 100%;
 }

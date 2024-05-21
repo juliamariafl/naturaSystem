@@ -7,7 +7,9 @@ const TabelaCadastroFinanceiro = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:8080/cadastros");
+        const { data } = await axios.get(
+          "http://localhost:8080/cadastrosFinanceiro"
+        );
         setCadastros(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
@@ -17,11 +19,13 @@ const TabelaCadastroFinanceiro = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (idCadastro) => {
+  const handleExcluirUsuario = async (idTransacao) => {
     try {
-      await axios.delete(`http://localhost:8080/cadastros/${idCadastro}`);
+      await axios.delete(`http://localhost:8080/cadastros/${idTransacao}`);
       // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:8080/cadastros");
+      const { data } = await axios.get(
+        "http://localhost:8080/cadastrosFinanceiro"
+      );
       setCadastros(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
@@ -40,27 +44,26 @@ const TabelaCadastroFinanceiro = () => {
         >
           <thead>
             <tr>
-              <th>Nome</th>
+              <th>ID</th>
+              <th>Data</th>
               <th>Descrição</th>
-              <th>Valor</th>
-              <th>Conta</th>
+              <th>Montante</th>
               <th>Categoria</th>
-              <th>Vencimento</th>
-              <th>Forma de pagamento</th>
               <th>Excluir</th>
               {/* Adicione mais colunas, se necessário */}
             </tr>
           </thead>
           <tbody>
             {cadastros.map((cadastro) => (
-              <tr key={cadastro.idCadastro}>
-                <td>{cadastro.nome}</td>
-                <td>{cadastro.descricao}</td>
-                <td>{cadastro.valor}</td>
-                <td>{cadastro.conta}</td>
-                <td>{cadastro.categoria}</td>
+              <tr key={cadastro.idTransacao}>
+                <td>{cadastro.idTransacao}</td>
+                <td>{cadastro.dataTransacao}</td>
+                <td>{cadastro.descricaoTransacao}</td>
+                <td>{cadastro.montante}</td>
+                <td>{cadastro.tipoTransacao}</td>
+                {/* <td>{cadastro.categoria}</td>
                 <td>{cadastro.vencimento}</td>
-                <td>{cadastro.formaDePagamento}</td>
+                <td>{cadastro.formaDePagamento}</td> */}
 
                 <td>
                   {cadastro.excluir}

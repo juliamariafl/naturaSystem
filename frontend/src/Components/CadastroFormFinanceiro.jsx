@@ -1,69 +1,76 @@
 // CadastroForm.jsx
-import React, { useState } from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
-const CadastroFormUsuario = () => {
+const CadastroFormFinanceiro = () => {
   const [formData, setFormData] = useState({
-    nome: '',
-    descricao: '',
-    valor: '',
-    conta: '',
-    categoria: '',
-    vencimento: '',
-    formaDePagamento: ''
+    idTransacao: "",
+    dataTransacao: "",
+    descricaoTransacao: "",
+    montante: "",
+    tipoTransacao: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/cadastros', formData);
-      alert('Cadastro criado com sucesso!');
+      await axios.post("http://localhost:8080/cadastrosFinanceiro", formData);
+      alert("Cadastro criado com sucesso!");
       // Limpar o formulário após o envio bem-sucedido
       setFormData({
-        nome: '',
-        descricao: '',
-        valor: '',
-        conta: '',
-        categoria: '',
-        vencimento: '',
-        formaDePagamento: ''
+        idTransacao: "",
+        dataTransacao: "",
+        descricaoTransacao: "",
+        montante: "",
+        tipoTransacao: "",
       });
     } catch (error) {
-      console.error('Erro ao criar cadastro:', error);
-      alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
+      console.error("Erro ao criar cadastro:", error);
+      alert("Erro ao criar cadastro. Verifique o console para mais detalhes.");
     }
   };
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-
   return (
-    <form className='financeiroForm' onSubmit={handleSubmit}>
-      <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-      <input type="text" name="descricao" placeholder="Descrição" value={formData.descricao} onChange={handleChange} />
-      <input type="number" name="valor" placeholder="Valor" value={formData.valor} onChange={handleChange} />
-      <input type="text" name="conta" placeholder="Conta" value={formData.conta} onChange={handleChange} />
-      <input type="text" name="categoria" placeholder="Categoria" value={formData.categoria} onChange={handleChange} />
-      <input type="number" name="vencimento" placeholder="Vencimento" value={formData.vencimento} onChange={handleChange} />
-      <input type="text" name="formaDePagamento" placeholder="Forma de Pagamento" value={formData.formaDePagamento} onChange={handleChange} />
+    <form onSubmit={handleSubmit}>
+      <input
+        type="date"
+        name="dataTransacao"
+        placeholder="Data do Gasto"
+        value={formData.dataTransacao}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="descricaoTransacao"
+        placeholder="Descrição do Gasto"
+        value={formData.descricaoTransacao}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="montante"
+        placeholder="Montante (Valor do gasto)"
+        value={formData.montante}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        name="tipoTransacao"
+        placeholder="Tipo de Gasto"
+        value={formData.tipoTransacao}
+        onChange={handleChange}
+      />
       <button type="submit">Salvar</button>
     </form>
   );
 };
 
-export default CadastroFormUsuario;
+export default CadastroFormFinanceiro;
