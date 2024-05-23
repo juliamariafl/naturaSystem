@@ -3,7 +3,6 @@
   width: 100%;
   height: 35px;
   background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
 }
 
 .iconPlus {
@@ -11,13 +10,16 @@
   height: 15px;
   margin-left: 10px;
   width: 40px;
+  color: white;
 }
 
 .tituloGasto {
+  color: white;
   margin-top: 8px;
 }
 
 .financeiro {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -38,7 +40,7 @@
 }
 
 a#left-tabs-example-tab-first {
-  color: rgb(255, 255, 255);
+  color: black;
   padding-left: 23px;
   border-radius: 0;
 }
@@ -132,4 +134,8 @@ a#left-tabs-example-tab-quarter {
 
 .adicionaisEmpresa {
   width: 100%;
+}
+
+.adicionaisEmpresa.row {
+  overflow-x: auto;
 }

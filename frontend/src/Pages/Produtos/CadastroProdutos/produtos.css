@@ -8,9 +8,10 @@
 }
 
 .FormInputs input {
-  border-radius: 25px;
-  width: 75vh;
+  border-radius: 15px;
+  margin: 5px;
   border: 1px solid;
+  padding: 10px;
 }
 
 .MuiCardContent-root.CardContent.css-46bh2p-MuiCardContent-root {

@@ -35,7 +35,7 @@ const TabelaCadastroFinanceiro = () => {
 
   return (
     <>
-      <div>
+      <div className="tabelaResponsiva">
         <table
           className="tabelaFinanceiro"
           border={2}

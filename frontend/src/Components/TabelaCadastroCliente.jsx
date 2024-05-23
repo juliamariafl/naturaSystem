@@ -35,7 +35,7 @@ const TabelaCadastroCliente = () => {
 
   return (
     <>
-      <div>
+      <div className="tabelaResponsiva">
         <h3 className="tabela">Tabela de Clientes</h3>
         <table border={2} cellPadding={5} cellSpacing={5}>
           <thead>

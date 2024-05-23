@@ -4,8 +4,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import "../CadastroProdutos/produtos.css";
 import CadastroFormProduto from "../../../Components/CadastroFormProduto";
+import "../CadastroProdutos/produtos.css";
 
 const CadastroProdutos = () => {
   return (

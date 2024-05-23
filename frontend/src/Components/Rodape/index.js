@@ -11,7 +11,7 @@ import "../Rodape/Rodape.css";
 
 function Rodape() {
   return (
-    <Container className="rainy">
+    <Container className="rainy mt-4">
       <Col>
         <footer class="py-0 my-1 justify-content-right footer">
           <p class=" nav-link linke text-right">

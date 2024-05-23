@@ -44,6 +44,7 @@ const CadastroFormFinanceiro = () => {
         type="date"
         name="dataTransacao"
         placeholder="Data do Gasto"
+        min="2000-01-02"
         value={formData.dataTransacao}
         onChange={handleChange}
       />
@@ -68,7 +69,9 @@ const CadastroFormFinanceiro = () => {
         value={formData.tipoTransacao}
         onChange={handleChange}
       />
-      <button type="submit">Salvar</button>
+      <button className="botaoProduto" type="submit">
+        Salvar
+      </button>
     </form>
   );
 };

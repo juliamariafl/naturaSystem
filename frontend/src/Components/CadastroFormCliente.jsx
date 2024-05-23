@@ -57,14 +57,14 @@ const CadastroFormCliente = () => {
         onChange={handleChange}
       />
       <input
-        type="text"
+        type="number"
         name="cpf"
         placeholder="CPF"
         value={formData.cpf}
         onChange={handleChange}
       />
       <input
-        type="number"
+        type="tel"
         name="telefone"
         placeholder="Telefone"
         value={formData.telefone}
@@ -77,7 +77,9 @@ const CadastroFormCliente = () => {
         value={formData.senha}
         onChange={handleChange}
       />
-      <button type="submit">Salvar</button>
+      <button className="botaoProduto" type="submit">
+        Salvar
+      </button>
     </form>
   );
 };

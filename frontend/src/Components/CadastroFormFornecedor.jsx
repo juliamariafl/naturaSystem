@@ -77,7 +77,9 @@ const CadastroFormFornecedor = () => {
         value={formData.senha}
         onChange={handleChange}
       />
-      <button type="submit">Salvar</button>
+      <button className="botaoProduto" type="submit">
+        Salvar
+      </button>
     </form>
   );
 };

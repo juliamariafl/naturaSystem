@@ -21,7 +21,7 @@ const TabelaVendas = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (idCadastro) => {
+  const handleExcluirUsuario = async (id) => {
     try {
       await axios.delete; //(https://localhost:8080/cadastros/${id});
       //   // Atualiza a lista de cadastros após a exclusão
