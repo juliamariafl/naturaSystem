@@ -38,17 +38,17 @@ router.get("/cadastrosFornecedor", (req, res) => {
   });
 });
 
-// //tabelaprodutos
-// router.get("/cadastrosProduto", (req, res) => {
-//   connection.query("SELECT * FROM produtocadastro", (err, results) => {
-//     if (err) {
-//       console.error("Erro ao buscar os registros:", err);
-//       res.status(500).json({ error: "Erro ao buscar os registros" });
-//       return;
-//     }
-//     res.json(results);
-//   });
-// });
+//tabelaprodutos
+router.get("/cadastrosProduto", (req, res) => {
+  connection.query("SELECT * FROM produtocadastro", (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar os registros:", err);
+      res.status(500).json({ error: "Erro ao buscar os registros" });
+      return;
+    }
+    res.json(results);
+  });
+});
 
 //tabelagestaofinanceiro
 router.get("/cadastrosFinanceiro", (req, res) => {
@@ -74,10 +74,22 @@ router.get("/cadastrosEstoque", (req, res) => {
   });
 });
 
+//tabelapedidofornecedor
+router.get("/cadastrosPedidoFornecedor", (req, res) => {
+  connection.query("SELECT * FROM pedidofornecedor", (err, results) => {
+    if (err) {
+      console.error("Erro ao buscar os registros:", err);
+      res.status(500).json({ error: "Erro ao buscar os registros" });
+      return;
+    }
+    res.json(results);
+  });
+});
+
 //tabelaVendas
 router.get("/cadastrosVendas", (req, res) => {
   connection.query(
-    "SELECT pedidos.id,pedidos.idCliente, clientes.nome, pedidos.idProduto, produtocadastro.nomeProduto FROM pedidos INNER JOIN clientes ON pedidos.idCliente = clientes.idCliente INNER join produtocadastro on produtocadastro.idProduto = pedidos.idProduto;",
+    "SELECT pedidos.id,pedidos.idCliente, clientes.nome, pedidos.idProduto, produtocadastro.nomeProduto FROM pedidos LEFT JOIN clientes ON pedidos.idCliente = clientes.idCliente LEFT join produtocadastro on produtocadastro.idProduto = pedidos.idProduto;",
     (err, results) => {
       if (err) {
         console.error("Erro ao buscar os registros:", err);
@@ -90,9 +102,24 @@ router.get("/cadastrosVendas", (req, res) => {
 });
 
 //tabelaRegistroProdutos
-router.get("/cadastrosProduto", (req, res) => {
+router.get("/cadastrosRegistroProduto", (req, res) => {
   connection.query(
     "SELECT registroproduto.id,registroproduto.idFornecedor, fornecedores.nome,registroproduto.idProduto, produtocadastro.nomeProduto, produtocadastro.linha, produtocadastro.preco, produtocadastro.descricaoProduto FROM registroproduto INNER JOIN fornecedores ON registroproduto.idFornecedor = fornecedores.idFornecedor INNER join produtocadastro on produtocadastro.idProduto = registroproduto.idProduto;",
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar os registros:", err);
+        res.status(500).json({ error: "Erro ao buscar os registros" });
+        return;
+      }
+      res.json(results);
+    }
+  );
+});
+
+//tabelaRegistroPedidos
+router.get("/cadastrosRegistroPedidos", (req, res) => {
+  connection.query(
+    "SELECT registropedido.id, registropedido.idFornecedor, fornecedores.nome,registropedido.idProduto, produtocadastro.nomeProduto,produtocadastro.linha, produtocadastro.preco,registropedido.idPedido, pedidofornecedor.quantidade, pedidofornecedor.idFornecedorPedido FROM registropedido left JOIN fornecedores on registropedido.idFornecedor = fornecedores.idFornecedor left JOIN produtocadastro on produtocadastro.idProduto = registropedido.idProduto left JOIN pedidofornecedor on pedidofornecedor.idPedido = pedidofornecedor.idPedido;",
     (err, results) => {
       if (err) {
         console.error("Erro ao buscar os registros:", err);
@@ -168,26 +195,26 @@ router.get("/cadastrosFornecedor/:id", (req, res) => {
   );
 });
 
-// //tabelaprodutos
-// router.get("/cadastrosProduto/:id", (req, res) => {
-//   const { id } = req.params;
-//   connection.query(
-//     "SELECT * FROM produtocadastro WHERE id = ?",
-//     [id],
-//     (err, results) => {
-//       if (err) {
-//         console.error("Erro ao buscar o registro:", err);
-//         res.status(500).json({ error: "Erro ao buscar o registro" });
-//         return;
-//       }
-//       if (results.length === 0) {
-//         res.status(404).json({ error: "Registro não encontrado" });
-//         return;
-//       }
-//       res.json(results[0]);
-//     }
-//   );
-// });
+//tabelaprodutos
+router.get("/cadastrosProduto/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "SELECT * FROM produtocadastro WHERE id = ?",
+    [id],
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar o registro:", err);
+        res.status(500).json({ error: "Erro ao buscar o registro" });
+        return;
+      }
+      if (results.length === 0) {
+        res.status(404).json({ error: "Registro não encontrado" });
+        return;
+      }
+      res.json(results[0]);
+    }
+  );
+});
 
 //tabelagestaofinanceiro
 router.get("/cadastrosFinanceiro/:id", (req, res) => {
@@ -215,6 +242,27 @@ router.get("/cadastrosEstoque/:id", (req, res) => {
   const { id } = req.params;
   connection.query(
     "SELECT * FROM estoque WHERE id = ?",
+    [id],
+    (err, results) => {
+      if (err) {
+        console.error("Erro ao buscar o registro:", err);
+        res.status(500).json({ error: "Erro ao buscar o registro" });
+        return;
+      }
+      if (results.length === 0) {
+        res.status(404).json({ error: "Registro não encontrado" });
+        return;
+      }
+      res.json(results[0]);
+    }
+  );
+});
+
+//tabelapedidofornecedor
+router.get("/cadastrosPedidoFornecedor/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "SELECT * FROM pedidofornecedor WHERE id = ?",
     [id],
     (err, results) => {
       if (err) {
@@ -289,24 +337,24 @@ router.post("/cadastrosFornecedor", (req, res) => {
   );
 });
 
-// //tabelaprodutos
-// router.post("/cadastrosProduto", (req, res) => {
-//   const { nomeProduto, linha, preco, descricaoProduto } = req.body;
-//   connection.query(
-//     "INSERT INTO produtocadastro (nomeProduto, linha, preco, descricaoProduto) VALUES (?, ?, ?, ?)",
-//     [nomeProduto, linha, preco, descricaoProduto],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Erro ao criar o registro:", err);
-//         res.status(500).json({ error: "Erro ao criar o registro" });
-//         return;
-//       }
-//       res
-//         .status(201)
-//         .json({ message: "Registro criado com sucesso", id: result.insertId });
-//     }
-//   );
-// });
+//tabelaprodutos
+router.post("/cadastrosProduto", (req, res) => {
+  const { nomeProduto, linha, preco, descricaoProduto } = req.body;
+  connection.query(
+    "INSERT INTO produtocadastro (nomeProduto, linha, preco, descricaoProduto) VALUES (?, ?, ?, ?)",
+    [nomeProduto, linha, preco, descricaoProduto],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao criar o registro:", err);
+        res.status(500).json({ error: "Erro ao criar o registro" });
+        return;
+      }
+      res
+        .status(201)
+        .json({ message: "Registro criado com sucesso", id: result.insertId });
+    }
+  );
+});
 
 //tabelagestaofinanceiro
 router.post("/cadastrosFinanceiro", (req, res) => {
@@ -334,6 +382,25 @@ router.post("/cadastrosEstoque", (req, res) => {
   connection.query(
     "INSERT INTO estoque (quantidade) VALUES (?)",
     [quantidade],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao criar o registro:", err);
+        res.status(500).json({ error: "Erro ao criar o registro" });
+        return;
+      }
+      res
+        .status(201)
+        .json({ message: "Registro criado com sucesso", id: result.insertId });
+    }
+  );
+});
+
+//tabelapedidofornecedor
+router.post("/cadastrosPedidoFornecedor", (req, res) => {
+  const { quantidade, nomeProdutoPedido, idFornecedorPedido } = req.body;
+  connection.query(
+    "INSERT INTO pedidofornecedor (quantidade, nomeProdutoPedido, idFornecedorPedido) VALUES (?, ?, ?)",
+    [quantidade, nomeProdutoPedido, idFornecedorPedido],
     (err, result) => {
       if (err) {
         console.error("Erro ao criar o registro:", err);
@@ -403,23 +470,23 @@ router.put("/cadastrosFornecedor/:id", (req, res) => {
   );
 });
 
-// //tabelaprodutos
-// router.put("/cadastrosProduto/:id", (req, res) => {
-//   const { id } = req.params;
-//   const { nomeProduto, linha, preco, descricaoProduto } = req.body;
-//   connection.query(
-//     "UPDATE produtocadastro SET nomeProduto = ?, linha = ?, preco = ?, descricaoproduto = ?, WHERE id = ?",
-//     [nomeProduto, linha, preco, descricaoProduto, id],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Erro ao atualizar o registro:", err);
-//         res.status(500).json({ error: "Erro ao atualizar o registro" });
-//         return;
-//       }
-//       res.json({ message: "Registro atualizado com sucesso" });
-//     }
-//   );
-// });
+//tabelaprodutos
+router.put("/cadastrosProduto/:id", (req, res) => {
+  const { id } = req.params;
+  const { nomeProduto, linha, preco, descricaoProduto } = req.body;
+  connection.query(
+    "UPDATE produtocadastro SET nomeProduto = ?, linha = ?, preco = ?, descricaoproduto = ?, WHERE id = ?",
+    [nomeProduto, linha, preco, descricaoProduto, id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao atualizar o registro:", err);
+        res.status(500).json({ error: "Erro ao atualizar o registro" });
+        return;
+      }
+      res.json({ message: "Registro atualizado com sucesso" });
+    }
+  );
+});
 
 //tabelagestaofinanceiro
 router.put("/cadastrosFinanceiro/:id", (req, res) => {
@@ -447,6 +514,23 @@ router.put("/cadastrosEstoque/:id", (req, res) => {
   connection.query(
     "UPDATE estoque SET quantidade = ?, WHERE id = ?",
     [quantidade, id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao atualizar o registro:", err);
+        res.status(500).json({ error: "Erro ao atualizar o registro" });
+        return;
+      }
+      res.json({ message: "Registro atualizado com sucesso" });
+    }
+  );
+});
+//tabelapedidofornecedor
+router.put("/cadastrosPedidoFornecedor/:id", (req, res) => {
+  const { idPedido } = req.params;
+  const { quantidade, nomeProdutoPedido, idFornecedorPedido } = req.body;
+  connection.query(
+    "UPDATE pedidofornecedor SET quantidade = ?, nomeProdutoPedido, idFornecedorPedido, WHERE id = ?",
+    [quantidade, nomeProdutoPedido, idFornecedorPedido, id],
     (err, result) => {
       if (err) {
         console.error("Erro ao atualizar o registro:", err);
@@ -493,7 +577,6 @@ router.delete("/cadastrosFuncionario/:id", (req, res) => {
   );
 });
 
-//tabelafornecedores
 router.delete("/cadastrosFornecedor/:id", (req, res) => {
   const { id } = req.params;
   connection.query(
@@ -510,22 +593,22 @@ router.delete("/cadastrosFornecedor/:id", (req, res) => {
   );
 });
 
-// //tabelaprodutos
-// router.delete("/cadastrosProduto/:id", (req, res) => {
-//   const { id } = req.params;
-//   connection.query(
-//     "DELETE FROM produtocadastro WHERE idProduto = ?",
-//     [id],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Erro ao excluir o registro:", err);
-//         res.status(500).json({ error: "Erro ao excluir o registro" });
-//         return;
-//       }
-//       res.json({ message: "Registro excluído com sucesso" });
-//     }
-//   );
-// });
+//tabelaprodutos
+router.delete("/cadastrosProduto/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "DELETE FROM produtocadastro WHERE idProduto = ?",
+    [id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao excluir o registro:", err);
+        res.status(500).json({ error: "Erro ao excluir o registro" });
+        return;
+      }
+      res.json({ message: "Registro excluído com sucesso" });
+    }
+  );
+});
 
 //tabelafinanceiro
 router.delete("/cadastrosFinanceiro/:id", (req, res) => {
@@ -549,6 +632,23 @@ router.delete("/cadastrosEstoque/:id", (req, res) => {
   const { id } = req.params;
   connection.query(
     "DELETE FROM estoque WHERE idEstoque = ?",
+    [id],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao excluir o registro:", err);
+        res.status(500).json({ error: "Erro ao excluir o registro" });
+        return;
+      }
+      res.json({ message: "Registro excluído com sucesso" });
+    }
+  );
+});
+
+//tabelapedidofornecedor
+router.delete("/cadastrosPedidoFornecedor/:id", (req, res) => {
+  const { id } = req.params;
+  connection.query(
+    "DELETE FROM pedidofornecedor WHERE idPedido = ?",
     [id],
     (err, result) => {
       if (err) {

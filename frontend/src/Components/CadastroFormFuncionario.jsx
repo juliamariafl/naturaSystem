@@ -1,6 +1,7 @@
 // CadastroForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import { Form, Row } from "react-bootstrap";
 
 const CadastroFormFuncionario = () => {
   const [formData, setFormData] = useState({
@@ -74,20 +75,72 @@ const CadastroFormFuncionario = () => {
         value={formData.telefone}
         onChange={handleChange}
       />
-      <input
-        type="number"
-        name="salario"
-        placeholder="Salário"
-        value={formData.salario}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="cargo"
-        placeholder="Cargo"
-        value={formData.cargo}
-        onChange={handleChange}
-      />
+      <Row className="inputSalario">
+        <input
+          className="inputeSalario"
+          type="number"
+          name="salario"
+          placeholder="Salário"
+          value={formData.salario}
+          onChange={handleChange}
+        />
+      </Row>
+      <Row className="inputeCargos">
+        <Form.Select
+          className="BotaoFornecedor"
+          aria-label="Default select example"
+          value={formData.cargo}
+          onChange={(e) => setFormData({ ...formData, cargo: e.target.value })}
+        >
+          <option value="">Cargos</option>
+          <option value="Representante de Vendas">
+            Representante de Vendas
+          </option>
+          <option value="Supervisor de Vendas">Supervisor de Vendas</option>
+          <option value="Gerente de Vendas">Gerente de Vendas</option>
+          <option value="Gerente de Produto">Gerente de Produto</option>
+          <option value="Analista de Marketing">Analista de Marketing</option>
+          <option value="Coordenador de Marketing">
+            Coordenador de Marketing
+          </option>
+          <option value="Coordenador de Eventos">Coordenador de Eventos</option>
+          <option value="Especialista em Relações Públicas">
+            Especialista em Relações Públicas
+          </option>
+          <option value="Gerente de Comunicação">Gerente de Comunicação</option>
+          <option value="Analista de Cadeia de Suprimentos">
+            Analista de Cadeia de Suprimentos
+          </option>
+          <option value="Gerente de Compras">Gerente de Compras</option>
+          <option value="Comprador">Comprador</option>
+          <option value="Designer de Produto">Designer de Produto</option>
+          <option value="Designer de Embalagens">Designer de Embalagens</option>
+          <option value="Designer Gráfico">Designer Gráfico</option>
+          <option value="Administrador de Banco de Dados">
+            Administrador de Banco de Dados
+          </option>
+          <option value="Analista de Sistemas">Analista de Sistemas</option>
+          <option value="Desenvolvedor de Software">
+            Desenvolvedor de Software
+          </option>
+          <option value="Engenheiro de Produto">Engenheiro de Produto</option>
+          <option value="Cientista de Cosméticos">
+            Cientista de Cosméticos
+          </option>
+          <option value="Coordenador de Logística">
+            Coordenador de Logística
+          </option>
+          <option value="Analista de Operações">Analista de Operações</option>
+          <option value="Gerente de Operações">Gerente de Operações</option>
+          <option value="Gerente Financeiro">Gerente Financeiro</option>
+          <option value="Analista Financeiro">Analista Financeiro</option>
+          <option value="Contador">Contador</option>
+          <option value="Analista de Recursos Humanos">
+            Analista de Recursos Humanos
+          </option>
+          <option value="Recrutador">Recrutador</option>
+        </Form.Select>
+      </Row>
       <input
         type="password"
         name="senha"
@@ -95,6 +148,7 @@ const CadastroFormFuncionario = () => {
         value={formData.senha}
         onChange={handleChange}
       />
+
       <button className="botaoProduto" type="submit">
         Salvar
       </button>

@@ -139,3 +139,42 @@ a#left-tabs-example-tab-quarter {
 .adicionaisEmpresa.row {
   overflow-x: auto;
 }
+
+.botaoCategoria {
+  height: 45px;
+  width: 216px;
+  margin-top: -50px;
+  border-radius: 15px;
+  outline: none !important;
+  box-shadow: 0 0 0 0 !important;
+  border: solid 1px !important;
+  margin-left: 93vh;
+  padding-left: 15px;
+  position: relative;
+}
+
+label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  margin-left: 142vh;
+}
+
+/* Estilo quando o mouse passa por cima */
+label:hover {
+  background-color: #333;
+}
+
+.dropFiltrar {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 0 none;
+}
+
+option {
+  color: black;
+}

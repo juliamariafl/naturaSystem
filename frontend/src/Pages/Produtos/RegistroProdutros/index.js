@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./RegistroProdutos.css";
-import TabelaCadastroProduto from "../../../Components/TabelaCadastroProduto";
+import TabelaRegistroProduto from "../../../Components/TabelaRegistroProduto";
 import { TfiMoney } from "react-icons/tfi";
 import { MdOutlineSell } from "react-icons/md";
 import { MdOutlineInventory } from "react-icons/md";
@@ -64,7 +64,7 @@ const RegistroProduto = () => {
       </Container>
       <div>
         <h3 className="registroProduto">Registro de Produto</h3>
-        <TabelaCadastroProduto />
+        <TabelaRegistroProduto />
       </div>
     </>
   );

@@ -57,18 +57,6 @@
   height: auto;
 }
 
-.form-select {
-  height: 50px;
-  width: 220px;
-  margin-top: -58px;
-  outline: none !important;
-  box-shadow: 0 0 0 0 !important;
-  border: solid 1px !important;
-  margin-left: 30vh;
-  padding-left: 15px;
-  position: relative;
-}
-
 .flexCheck {
   padding-right: 20px;
 }
@@ -107,29 +95,10 @@
   /* Espaço entre os botões */
 }
 
-@media screen and (max-width: 1080px) {
-  .btn-primary {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .borda {
-    margin-left: 5px !important;
-    max-width: 100%;
-  }
-
-  .form-select {
-    margin-left: 170px !important;
-  }
-  .col-md-6 {
-    margin: 0 !important;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .form-select {
-    margin-left: 20px;
-  }
+.titulo {
+  text-align: center;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .Logar {
@@ -142,7 +111,7 @@
 
 .borda {
   width: 185vh;
-  height: 110vh;
+  height: 70vh;
   border: solid 1px;
   border-radius: 20px;
   justify-content: center;
@@ -150,6 +119,92 @@
   padding-top: 30px;
 }
 
-.col-md-6 {
-  margin: 35px 0 0 30px;
+.color {
+  color: black;
+}
+.nomeinput {
+  background-color: transparent;
+  color: black;
+  margin: 0 !important;
+  font-size: larger;
+}
+
+.nomeinput:hover {
+  background-color: transparent;
+  color: black;
+}
+
+input#validationCustom03 {
+  box-shadow: 0 0 0 0;
+  border: 1px solid black;
+  outline: none;
+}
+
+input#validationCustom04 {
+  border: 1px solid black;
+  outline: none;
+  box-shadow: 0 0 0 0;
+}
+
+.mb-3.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
+  margin-left: 25px;
+}
+
+.botaoEnviar {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+@media screen and (max-width: 1080px) {
+  .btn-primary {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .borda {
+    margin-left: 5px !important;
+    max-width: 100%;
+  }
+
+  .form-select {
+    margin-top: 0;
+    margin-left: 80px;
+    width: 225px;
+  }
+  label {
+    margin-left: 0;
+  }
+  .botaoCategoria {
+    margin-left: 5px;
+  }
+  .inputeSalario {
+    margin-left: 80px;
+    max-width: 224px;
+  }
+
+  .col-md-6 {
+    margin-left: -10px !important;
+  }
+  input#validationCustom03 {
+    margin-left: 3px;
+  }
+  input#validationCustom04 {
+    margin-left: 8px;
+  }
+  .col-md-3 {
+    margin-left: -20px;
+  }
+  .formLogin {
+    margin-top: -15vh;
+    /* margin-left: 9px; */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .form-select {
+    margin-left: 20px;
+  }
 }

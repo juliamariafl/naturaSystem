@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../src/Pages/Vendas/Vendas.css";
 
 const TabelaVendas = () => {
@@ -36,42 +36,37 @@ const TabelaVendas = () => {
   return (
     <>
       <Container>
-        <div className="tabelaResponsiva">
-          <table border={2} cellPadding={5} cellSpacing={5}>
-            <thead>
-              <tr>
-                <th>ID da Venda</th>
-                <th>ID do Cliente</th>
-                <th>Nome</th>
-                <th>Id do Produto</th>
-                <th>Nome do Produto</th>
-                <th>Excluir</th>
-                {/* Adicione mais colunas, se necessário */}
-              </tr>
-            </thead>
-            <tbody>
-              {cadastros.map((cadastro) => (
-                <tr key={cadastro.id}>
-                  <td>{cadastro.id}</td>
-                  <td>{cadastro.idCliente}</td>
-                  <td>{cadastro.nome}</td>
-                  <td>{cadastro.idProduto}</td>
-                  <td>{cadastro.nomeProduto}</td>
-                  <td>
-                    {cadastro.excluir}
-                    <button
-                      variant="danger"
-                      onClick={() => handleExcluirUsuario(cadastro.id)}
-                    >
-                      Excluir
-                    </button>
-                  </td>
-                  {/* Renderizar outras colunas, se necessário */}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Row>
+          <Col>
+            <div className="tabelaResponsiva">
+              <table border={2} cellPadding={5} cellSpacing={5}>
+                <thead>
+                  <tr>
+                    <th>ID da Venda</th>
+                    <th>ID do Cliente</th>
+                    <th>Nome</th>
+                    <th>Id do Produto</th>
+                    <th>Nome do Produto</th>
+
+                    {/* Adicione mais colunas, se necessário */}
+                  </tr>
+                </thead>
+                <tbody>
+                  {cadastros.map((cadastro) => (
+                    <tr key={cadastro.id}>
+                      <td>{cadastro.id}</td>
+                      <td>{cadastro.idCliente}</td>
+                      <td>{cadastro.nome}</td>
+                      <td>{cadastro.idProduto}</td>
+                      <td>{cadastro.nomeProduto}</td>
+                      {/* Renderizar outras colunas, se necessário */}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   );

@@ -1,21 +1,33 @@
-//Financeiro
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaPlus } from "react-icons/fa6";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { TbPigMoney } from "react-icons/tb";
 import CadastroFormFinanceiro from "../../Components/CadastroFormFinanceiro";
 import TabelaCadastroFinanceiro from "../../Components/TabelaCadastroFinanceiro";
+import TabelaPedidoFornecedor from "../../Components/TabelaPedidoFornecedor";
+import CadastroFormPedidoFornecedor from "../../Components/CadastroFormPedidoFornecedor";
 import { FaHome } from "react-icons/fa";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Row from "react-bootstrap/Row";
 import Tab from "react-bootstrap/Tab";
+import { Image } from "react-bootstrap";
 import "../Financeiro/Financeiro.css";
+import financas from "../../img/financasimg.svg";
+import Button from "react-bootstrap/esm/Button";
+import Stack from "react-bootstrap/Stack";
+import { GiArchiveRegister } from "react-icons/gi";
+import Modal from "react-bootstrap/Modal";
 
 const Financeiro = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
-      <h3 className="financeiro">Finanças</h3>
+      <h1 className="financeiro mt-5">Registro de Gastos Financeiros</h1>
       <div className="novoGasto">
         <FaPlus className="iconPlus" />
         <h6 className="tituloGasto">Adicionar novo gasto</h6>
@@ -37,24 +49,55 @@ const Financeiro = () => {
               <Nav.Item>
                 <Nav.Link eventKey="third">
                   <FaMoneyCheckDollar className="linkDollar" />
-                  Controle do mês:
+                  Novo Pedido ao fornecedor:
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="quarter">
                   <TbPigMoney className="linkPig" />
-                  Metas Financeiras:
+                  Pedidos ao forneceodor:
                 </Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
           <Col sm={8}>
             <Tab.Content>
+              <Tab.Pane eventKey="first">
+                <Image
+                  src={financas}
+                  style={{
+                    width: "550px",
+                    height: "350px",
+                  }}
+                  fluid
+                  alt="Phone image"
+                />
+              </Tab.Pane>
               <Tab.Pane eventKey="second">
                 <CadastroFormFinanceiro />
               </Tab.Pane>
-              <Tab.Pane eventKey="third">Controle do mês:</Tab.Pane>
-              <Tab.Pane eventKey="quarter">Metas Financeiras:</Tab.Pane>
+              <Tab.Pane eventKey="third">
+                <CadastroFormPedidoFornecedor />
+              </Tab.Pane>
+              <Tab.Pane eventKey="quarter">
+                {" "}
+                <Button
+                  id="dropdown-basic"
+                  variant="primary"
+                  onClick={handleShow}
+                >
+                  <GiArchiveRegister className="iconeButtonVendas" />
+                  Registro dos pedidos
+                </Button>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Registro de Pedidos</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <TabelaPedidoFornecedor />
+                  </Modal.Body>
+                </Modal>
+              </Tab.Pane>
             </Tab.Content>
           </Col>
         </Row>

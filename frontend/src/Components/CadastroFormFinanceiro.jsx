@@ -1,6 +1,7 @@
 // CadastroForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import { Form } from "react-bootstrap";
 
 const CadastroFormFinanceiro = () => {
   const [formData, setFormData] = useState({
@@ -62,13 +63,18 @@ const CadastroFormFinanceiro = () => {
         value={formData.montante}
         onChange={handleChange}
       />
-      <input
-        type="text"
-        name="tipoTransacao"
-        placeholder="Tipo de Gasto"
+      <Form.Select
+        aria-label="Default select example"
+        className="botaoCategoria"
         value={formData.tipoTransacao}
-        onChange={handleChange}
-      />
+        onChange={(e) =>
+          setFormData({ ...formData, tipoTransacao: e.target.value })
+        }
+      >
+        <option value="">Categoria</option>
+        <option value="A pagar">A pagar</option>
+        <option value="A receber">A receber</option>
+      </Form.Select>
       <button className="botaoProduto" type="submit">
         Salvar
       </button>

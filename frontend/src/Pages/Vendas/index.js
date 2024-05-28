@@ -21,7 +21,7 @@ const Vendas = () => {
     <>
       <Container>
         <Row className="VendasButton">
-          <h2 className="tituloVenda">Tabela de Gestão de Vendas</h2>
+          <h1 className="tituloVenda mt-5">Registro de Gestão de Vendas</h1>
           <Stack direction="horizontal" gap={3} id="buttonsVendas">
             <Button id="dropdown-basic" variant="primary" onClick={handleShow}>
               <GiArchiveRegister className="iconeButtonVendas" />

@@ -57,7 +57,7 @@ const CadastroFormFornecedor = () => {
         onChange={handleChange}
       />
       <input
-        type="number"
+        type="text"
         name="telefone"
         placeholder="Telefone"
         value={formData.telefone}

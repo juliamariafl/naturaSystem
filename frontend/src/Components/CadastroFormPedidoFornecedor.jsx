@@ -1,16 +1,13 @@
 // CadastroForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
-import { Form } from "react-bootstrap";
 
-const CadastroFormCliente = () => {
+const CadastroFormPedidoFornecedor = () => {
   const [formData, setFormData] = useState({
-    id: "",
-    nome: "",
-    email: "",
-    cpf: "",
-    telefone: "",
-    senha: "",
+    idPedido: "",
+    quantidade: "",
+    nomeProdutoPedido: "",
+    idFornecedorPedido: "",
   });
 
   const handleChange = (e) => {
@@ -24,16 +21,17 @@ const CadastroFormCliente = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/cadastrosCliente", formData);
+      await axios.post(
+        "http://localhost:8080/cadastrosPedidoFornecedor",
+        formData
+      );
       alert("Cadastro criado com sucesso!");
       // Limpar o formulário após o envio bem-sucedido
       setFormData({
-        id: "",
-        nome: "",
-        email: "",
-        cpf: "",
-        telefone: "",
-        senha: "",
+        idPedido: "",
+        quantidade: "",
+        nomeProdutoPedido: "",
+        idFornecedorPedido: "",
       });
     } catch (error) {
       console.error("Erro ao criar cadastro:", error);
@@ -45,37 +43,23 @@ const CadastroFormCliente = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        name="nome"
-        placeholder="Nome"
-        value={formData.nome}
+        name="nomeProdutoPedido"
+        placeholder="Nome do Produto"
+        value={formData.nomeProdutoPedido}
         onChange={handleChange}
       />
       <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
+        type="text"
+        name="idFornecedorPedido"
+        placeholder="ID do Fornecedor"
+        value={formData.idFornecedorPedido}
         onChange={handleChange}
       />
       <input
-        type="number"
-        name="cpf"
-        placeholder="CPF"
-        value={formData.cpf}
-        onChange={handleChange}
-      />
-      <input
-        type="tel"
-        name="telefone"
-        placeholder="Telefone"
-        value={formData.telefone}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        name="senha"
-        placeholder="Crie uma senha"
-        value={formData.senha}
+        type="text"
+        name="quantidade"
+        placeholder="Quantidade de Produtos"
+        value={formData.quantidade}
         onChange={handleChange}
       />
       <button className="botaoProduto" type="submit">
@@ -85,4 +69,4 @@ const CadastroFormCliente = () => {
   );
 };
 
-export default CadastroFormCliente;
+export default CadastroFormPedidoFornecedor;
