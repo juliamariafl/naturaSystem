@@ -27,7 +27,7 @@ const Financeiro = () => {
 
   return (
     <>
-      <h1 className="financeiro mt-5">Registro de Gastos Financeiros</h1>
+      <h2 className="financeiro mt-5">Registro de Gastos Financeiros</h2>
       <div className="novoGasto">
         <FaPlus className="iconPlus" />
         <h6 className="tituloGasto">Adicionar novo gasto</h6>

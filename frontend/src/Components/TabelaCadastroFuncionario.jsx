@@ -42,7 +42,7 @@ const TabelaCadastroFuncionario = () => {
         <Row>
           <Col>
             <div className="tabelaResponsiva">
-              <h1 className="tabela mt-5">Registro de Funcionários</h1>
+              <h2 className="tabela mt-5">Registro de Funcionários</h2>
               <table border={2} cellPadding={5} cellSpacing={5}>
                 <thead>
                   <tr>

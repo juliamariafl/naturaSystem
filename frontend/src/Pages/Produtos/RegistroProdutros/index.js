@@ -63,7 +63,7 @@ const RegistroProduto = () => {
         </Row>
       </Container>
       <div>
-        <h3 className="registroProduto">Registro de Produto</h3>
+        <h2 className="registroProduto">Registro de Produto</h2>
         <TabelaRegistroProduto />
       </div>
     </>

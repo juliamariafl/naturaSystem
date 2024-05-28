@@ -142,13 +142,13 @@ a#left-tabs-example-tab-quarter {
 
 .botaoCategoria {
   height: 45px;
-  width: 216px;
-  margin-top: -50px;
+  width: 180px;
+  margin-top: 5px;
   border-radius: 15px;
   outline: none !important;
   box-shadow: 0 0 0 0 !important;
   border: solid 1px !important;
-  margin-left: 93vh;
+  margin-left: 1vh;
   padding-left: 15px;
   position: relative;
 }
